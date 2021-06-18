@@ -1,8 +1,8 @@
 import {
   Entity,
-  Column,
-  CreateDateColumn,
   PrimaryColumn,
+  CreateDateColumn,
+  Column,
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
@@ -32,7 +32,9 @@ class Message {
   created_at: Date;
 
   constructor() {
-    if (!this.id) this.id = uuid();
+    if (!this.id) {
+      this.id = uuid();
+    }
   }
 }
 
